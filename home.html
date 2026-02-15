@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="photo-controls">
-                        <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                        <input type="file" id="photoInput" onchange="handlePhotoUpload(event)" accept="image/*" style="display: none;">
                         <button type="button" class="btn-photo" onclick="document.getElementById('photoInput').click()">
                             <i class="fas fa-upload"></i> Upload Photo
                         </button>
