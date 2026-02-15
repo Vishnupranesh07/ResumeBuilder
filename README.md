@@ -43,11 +43,16 @@ A modern, professional resume builder web application with ATS optimization, pho
 - Embedded QR codes in final resume for easy portfolio access
 - Scan QR codes to view project documentation, presentations, or live demos
 
+  🎨 Choose Your Template
+
+Users can select from multiple professionally designed resume templates to match their personal style and career needs. Each template is structured to highlight key information clearly and effectively. Switching between templates is simple, allowing users to preview different designs before finalizing their resume.
+
 ### 💾 Smart Features
 - User authentication and personal resume storage
 - Photo upload with automatic optimization
 - Auto-save functionality (every 30 seconds)
 - Real-time preview generation
+- mulitiple templates are available to design your resume
 - Multiple export formats (PDF, HTML, Word)
 - File upload support for project documentation
 
@@ -71,6 +76,7 @@ A modern, professional resume builder web application with ATS optimization, pho
    - Fill in your personal information
    - Add work experience, education, and skills
    - Include projects with QR code generation
+   - choose a template
    - Preview and download in your preferred format
 
 ### Usage
@@ -228,5 +234,6 @@ For issues or questions:
 3. Ensure all files are properly loaded
 
 ---
+
 
 **Note**: This is a client-side application that runs entirely in your browser. Your data is stored locally and not transmitted to any external servers, ensuring privacy and security.
