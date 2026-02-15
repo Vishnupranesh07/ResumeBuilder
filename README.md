@@ -2,7 +2,7 @@
 
 # Resume Builder
 
-A modern, professional resume builder web application with ATS optimization, photo support, QR code generation for project portfolios, and multiple export formats.
+A modern, professional resume builder web application with ATS optimization, photo support, QR code generation for project portfolios, multiple templates and multiple export formats.
 
 ## 🌟 New Features
 
@@ -237,3 +237,4 @@ For issues or questions:
 
 
 **Note**: This is a client-side application that runs entirely in your browser. Your data is stored locally and not transmitted to any external servers, ensuring privacy and security.
+
