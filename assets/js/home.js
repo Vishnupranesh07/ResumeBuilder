@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             alert('Login successful! Redirecting to resume builder...');
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'home.html';
             }, 1000);
         } else {
             alert('Invalid email or password');
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         alert('Account created successfully! Redirecting to resume builder...');
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'home.html';
         }, 1000);
     });
     
@@ -226,4 +226,5 @@ function scrollToTop() {
         top: 0,
         behavior: 'smooth'
     });
+
 }
