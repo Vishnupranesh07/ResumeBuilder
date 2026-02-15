@@ -447,6 +447,46 @@ main {
     border-radius: 10px;
 }
 
+.modern-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.modern-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+.sidebar-photo img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+.creative-header {
+    text-align: center;
+}
+
+.creative-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 4px solid #ddd;
+}
+.ats-photo img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+
 .resume-template.modern .resume-header {
     background: linear-gradient(135deg, #0396FF 0%, #0D47A1 100%);
     color: white;

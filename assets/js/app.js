@@ -1094,12 +1094,29 @@ async function getInlineHTML() {
     return wrapper.innerHTML;
 }
 
+function buildProfilePhoto(className = "profile-photo") {
+    if (!resumeData.photo) return "";
+
+    return `
+        <div class="${className}">
+            <img src="${resumeData.photo}" alt="Profile Photo">
+        </div>
+    `;
+}
+
+
 function buildModernTemplate() {
     return `
     <div class="template modern-template">
         <div class="modern-header">
-            <h1>${resumeData.personal.fullName}</h1>
-            <p>${resumeData.personal.email} | ${resumeData.personal.phone}</p>
+              ${buildProfilePhoto("modern-photo")}
+             <div>
+                <h1>${resumeData.personal.fullName || ""}</h1>
+                <p>
+                    ${resumeData.personal.email || ""} 
+                    ${resumeData.personal.phone ? " | " + resumeData.personal.phone : ""}
+                </p>
+            </div>
         </div>
 
         ${buildSummary()}
@@ -1114,15 +1131,17 @@ function buildSidebarTemplate() {
     return `
     <div class="template sidebar-template">
         <div class="sidebar-left">
-            <h2>${resumeData.personal.fullName}</h2>
-            <p>${resumeData.personal.email}</p>
-            <p>${resumeData.personal.phone}</p>
+            ${buildProfilePhoto("sidebar-photo")}
+
+            <h2>${resumeData.personal.fullName || ""}</h2>
+            <p>${resumeData.personal.email || ""}</p>
+            <p>${resumeData.personal.phone || ""}</p>
 
             <h3>Skills</h3>
-            <p>${resumeData.skills.technical}</p>
+            <p>${resumeData.skills?.technical || ""}</p>
 
             <h3>Certifications</h3>
-            <p>${resumeData.skills.certifications}</p>
+            <p>${resumeData.skills?.certifications || ""}</p>
         </div>
 
         <div class="sidebar-right">
@@ -1134,12 +1153,14 @@ function buildSidebarTemplate() {
     </div>
     `;
 }
+
 function buildCreativeTemplate() {
     return `
     <div class="template creative-template">
         <div class="creative-header">
-            <h1>${resumeData.personal.fullName}</h1>
-            <span>${resumeData.personal.location}</span>
+            ${buildProfilePhoto("creative-photo")}
+            <h1>${resumeData.personal.fullName || ""}</h1>
+            <span>${resumeData.personal.location || ""}</span>
         </div>
 
         <div class="creative-section">
@@ -1156,11 +1177,19 @@ function buildCreativeTemplate() {
     </div>
     `;
 }
+
 function buildATSTemplate() {
     return `
     <div class="template ats-template">
-        <h1>${resumeData.personal.fullName}</h1>
-        <p>${resumeData.personal.email} | ${resumeData.personal.phone} | ${resumeData.personal.location}</p>
+
+        ${buildProfilePhoto("ats-photo")}
+
+        <h1>${resumeData.personal.fullName || ""}</h1>
+        <p>
+            ${resumeData.personal.email || ""} 
+            ${resumeData.personal.phone ? " | " + resumeData.personal.phone : ""}
+            ${resumeData.personal.location ? " | " + resumeData.personal.location : ""}
+        </p>
 
         <hr/>
 
@@ -1172,6 +1201,7 @@ function buildATSTemplate() {
     </div>
     `;
 }
+
 function buildSummary() {
     if (!resumeData.personal.summary) return "";
     return `
