@@ -829,7 +829,7 @@ function checkAuth() {
 function logout() {
     localStorage.removeItem('currentUser');
     localStorage.removeItem('rememberUser');
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
 }
 
 function loadUserResume() {
@@ -1774,4 +1774,5 @@ function collectProjectData() {
         }
     });
     return projects;
+
 }
