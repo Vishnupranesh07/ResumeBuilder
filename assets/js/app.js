@@ -764,53 +764,6 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add('active');
 }
 
-// Photo management
-function handlePhotoUpload(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-    
-    // Validate file
-    if (!file.type.startsWith('image/')) {
-        alert('Please select a valid image file.');
-        return;
-    }
-    
-    if (file.size > 5 * 1024 * 1024) {
-        alert('Image size should be less than 5MB.');
-        return;
-    }
-    
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const photoPreview = document.getElementById('photoPreview');
-        const placeholder = document.querySelector('.photo-placeholder');
-        const removeBtn = document.getElementById('removePhotoBtn');
-        
-        photoPreview.src = e.target.result;
-        photoPreview.style.display = 'block';
-        placeholder.style.display = 'none';
-        removeBtn.style.display = 'inline-flex';
-        
-        // Store photo data
-        resumeData.photo = e.target.result;
-    };
-    reader.readAsDataURL(file);
-}
-
-function removePhoto() {
-    const photoPreview = document.getElementById('photoPreview');
-    const placeholder = document.querySelector('.photo-placeholder');
-    const removeBtn = document.getElementById('removePhotoBtn');
-    const photoInput = document.getElementById('photoInput');
-    
-    photoPreview.style.display = 'none';
-    placeholder.style.display = 'flex';
-    removeBtn.style.display = 'none';
-    photoInput.value = '';
-    
-    resumeData.photo = null;
-}
-
 // User management
 function checkAuth() {
     // Get current user from localStorage
@@ -1115,6 +1068,7 @@ function buildModernTemplate() {
                 <p>
                     ${resumeData.personal.email || ""} 
                     ${resumeData.personal.phone ? " | " + resumeData.personal.phone : ""}
+                    ${resumeData.personal.linkedin ? " | Linkedin Profile: " + resumeData.personal.linkedin : ""}
                 </p>
             </div>
         </div>
@@ -1127,6 +1081,9 @@ function buildModernTemplate() {
     </div>
     `;
 }
+
+
+
 function buildSidebarTemplate() {
     return `
     <div class="template sidebar-template">
@@ -1136,7 +1093,8 @@ function buildSidebarTemplate() {
             <h2>${resumeData.personal.fullName || ""}</h2>
             <p>${resumeData.personal.email || ""}</p>
             <p>${resumeData.personal.phone || ""}</p>
-
+            <p>${resumeData.personal.linkedin  ||""}
+            
             <h3>Skills</h3>
             <p>${resumeData.skills?.technical || ""}</p>
 
@@ -1160,6 +1118,9 @@ function buildCreativeTemplate() {
         <div class="creative-header">
             ${buildProfilePhoto("creative-photo")}
             <h1>${resumeData.personal.fullName || ""}</h1>
+            <span>Email: ${resumeData.personal.email || ""}</span>
+            <span>Phone: ${resumeData.personal.phone || ""}</span>
+            <span>Linkedin: ${resumeData.personal.location || ""}</span>
             <span>${resumeData.personal.location || ""}</span>
         </div>
 
@@ -1188,6 +1149,7 @@ function buildATSTemplate() {
         <p>
             ${resumeData.personal.email || ""} 
             ${resumeData.personal.phone ? " | " + resumeData.personal.phone : ""}
+            ${resumeData.personal.linkedin ? " | " + resumeData.personal.linkedin : ""}
             ${resumeData.personal.location ? " | " + resumeData.personal.location : ""}
         </p>
 
@@ -1774,5 +1736,51 @@ function collectProjectData() {
         }
     });
     return projects;
+}
 
+// Photo management
+function handlePhotoUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    // Validate file
+    if (!file.type.startsWith('image/')) {
+        alert('Please select a valid image file.');
+        return;
+    }
+    
+    if (file.size > 5 * 1024 * 1024) {
+        alert('Image size should be less than 5MB.');
+        return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const photoPreview = document.getElementById('photoPreview');
+        const placeholder = document.querySelector('.photo-placeholder');
+        const removeBtn = document.getElementById('removePhotoBtn');
+        
+        photoPreview.src = e.target.result;
+        photoPreview.style.display = 'block';
+        placeholder.style.display = 'none';
+        removeBtn.style.display = 'inline-flex';
+        
+        // Store photo data
+        resumeData.photo = e.target.result;
+    };
+    reader.readAsDataURL(file);
+}
+
+function removePhoto() {
+    const photoPreview = document.getElementById('photoPreview');
+    const placeholder = document.querySelector('.photo-placeholder');
+    const removeBtn = document.getElementById('removePhotoBtn');
+    const photoInput = document.getElementById('photoInput');
+    
+    photoPreview.style.display = 'none';
+    placeholder.style.display = 'flex';
+    removeBtn.style.display = 'none';
+    photoInput.value = '';
+    
+    resumeData.photo = null;
 }
