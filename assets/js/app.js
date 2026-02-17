@@ -1120,8 +1120,8 @@ function buildCreativeTemplate() {
             <h1>${resumeData.personal.fullName || ""}</h1>
             <span>Email: ${resumeData.personal.email || ""}</span>
             <span>Phone: ${resumeData.personal.phone || ""}</span>
-            <span>Linkedin: ${resumeData.personal.location || ""}</span>
-            <span>${resumeData.personal.location || ""}</span>
+            <span>Linkedin: ${resumeData.personal.linkedin || ""}</span>
+            <span>Location: ${resumeData.personal.location || ""}</span>
         </div>
 
         <div class="creative-section">
@@ -1784,3 +1784,4 @@ function removePhoto() {
     
     resumeData.photo = null;
 }
+
