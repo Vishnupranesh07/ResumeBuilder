@@ -328,7 +328,7 @@ body {
 
 .auto-slider-section{
     width:100%;
-    padding:70px 20px;
+    padding:60px 20px;
     background:rgba(255,255,255,0.6);
     text-align:center;
     overflow:hidden;
@@ -408,7 +408,7 @@ body {
 
 /* Features Section */
 .features {
-    padding: 100px 0;
+    padding: 70px 0;
     background: #f8f9fa;
 }
 
@@ -820,4 +820,5 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #667eea #f1f5f9;
 }
+
 
