@@ -324,7 +324,87 @@ body {
 .section-gap {
   height: 12px;
 }
+/* ===== AUTO HORIZONTAL IMAGE SLIDER ===== */
 
+.auto-slider-section{
+    width:100%;
+    padding:70px 20px;
+    background:rgba(255,255,255,0.6);
+    text-align:center;
+    overflow:hidden;
+}
+
+.auto-slider-title{
+    font-size:2.2rem;
+    color:#0f172a;
+    margin-bottom:40px;
+    font-weight:700;
+}
+
+/* container */
+.auto-slider-container{
+    width:100%;
+    overflow:hidden;
+}
+
+/* moving track */
+.auto-slider-track{
+    display:flex;
+    width:max-content;
+    animation: autoScroll 35s linear infinite;
+}
+
+/* each slide */
+.auto-slide{
+    min-width:280px;
+    height:380px;
+    margin:0 15px;
+    border-radius:18px;
+    overflow:hidden;
+    background:rgba(255,255,255,0.6);
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    border:1px solid #e5e7eb;
+    flex-shrink:0;
+}
+
+/* image */
+.auto-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* animation */
+@keyframes autoScroll{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}
+
+/* responsive */
+@media(max-width:1024px){
+    .auto-slide{
+        min-width:240px;
+        height:330px;
+    }
+}
+
+@media(max-width:768px){
+    .auto-slide{
+        min-width:220px;
+        height:300px;
+    }
+}
+
+@media(max-width:480px){
+    .auto-slide{
+        min-width:190px;
+        height:260px;
+    }
+}
 
 /* Features Section */
 .features {
@@ -346,16 +426,21 @@ body {
 }
 
 .feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: transform 0.3s ease;
+    width:  300px;
+    height: 300px;
+    border: none !important;
+    box-shadow: 15px 20px 20px rgba(0,0,0,0.3), inset 4px 4px 10px #e5e5e5;
+    border-radius: 20px !important;
+    overflow: hidden;
+    justify-content: center;
+    align-items :center;
+    margin: 20px 6px;
+    transition: .2s;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+   box-shadow: inset 5px 5px 10px rgba(0,0,0,0.3), inset -4px -4px 10px white;
+     transition: .2s ;
 }
 
 .feature-icon {
@@ -735,3 +820,4 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #667eea #f1f5f9;
 }
+
