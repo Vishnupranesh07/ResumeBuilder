@@ -329,7 +329,7 @@ body {
 .auto-slider-section{
     width:100%;
     padding:60px 20px;
-    background:rgba(255,255,255,0.6);
+    background: #f3f4f6;
     text-align:center;
     overflow:hidden;
 }
@@ -408,8 +408,8 @@ body {
 
 /* Features Section */
 .features {
-    padding: 70px 0;
-    background: #f8f9fa;
+    padding: 60px 0;
+    background: #f3f4f6;
 }
 
 .section-title {
@@ -426,10 +426,12 @@ body {
 }
 
 .feature-card {
-    width:  300px;
-    height: 300px;
+    width:  360px;
+    height: 310px;
+    padding: 2rem;
+    background: #ffffff;
     border: none !important;
-    box-shadow: 15px 20px 20px rgba(0,0,0,0.3), inset 4px 4px 10px #e5e5e5;
+    box-shadow: 15px 15px 15px rgba(41,40,40,0.3), inset 4px 4px 10px #e5e5e5;
     border-radius: 20px !important;
     overflow: hidden;
     justify-content: center;
@@ -820,5 +822,6 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #667eea #f1f5f9;
 }
+
 
 
