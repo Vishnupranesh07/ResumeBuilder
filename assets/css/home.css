@@ -226,7 +226,7 @@ body {
 /* Sidebar */
 .resume-sidebar {
   width: 35%;
-  background: linear-gradient(180deg,  #6366f1, #8b5cf6);
+  background: linear-gradient(180deg,  lch(56.21% 52.54 294.76), #af91f048);
   padding: 1.2rem 0.8rem;
   color: white;
 }
@@ -278,7 +278,8 @@ body {
 /* Header bar */
 .mockup-header {
   height: 50px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, hsl(239, 69%, 78%), hsl(239, 69%, 78%));
+  border-radius: 8px;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -293,7 +294,7 @@ body {
 .mockup-heading {
   height: 12px;
   width: 45%;
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  background: linear-gradient(90deg, hsl(221, 47%, 77%), #477fc3);
   border-radius: 6px;
   margin-bottom: 0.4rem;
 }
@@ -822,6 +823,7 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #667eea #f1f5f9;
 }
+
 
 
 
